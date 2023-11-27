@@ -1,0 +1,23 @@
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+    def perimeter(self):
+        return 2 * (self.length + self.width)
+
+# Given list of numbers
+dimensions = [10, 501, 22, 37, 100, 999, 87, 351]
+
+# Creating instances of Rectangle class
+rectangles = [Rectangle(dimensions[i], dimensions[i+1]) for i in range(0, len(dimensions), 2)]
+
+# Calculating area and perimeter for each rectangle
+for i, rectangle in enumerate(rectangles):
+    print(f"Rectangle {i+1}:")
+    print(f"Area: {rectangle.area()}")
+    print(f"Perimeter: {rectangle.perimeter()}")
+    print()
